@@ -10,7 +10,7 @@
       },
       "root": "apps/vbt-account",
       "sourceRoot": "apps/vbt-account/src",
-      "prefix": "atlas-soft-design",
+      "prefix": "vbt",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -23,7 +23,13 @@
             "aot": true,
             "assets": [
               "apps/vbt-account/src/favicon.ico",
-              "apps/vbt-account/src/assets"
+              "apps/vbt-account/src/assets",
+              "apps/vbt-account/src/app.config.json",
+              {
+                "glob": "apps/vbt-account/src/app.config.json",
+                "input": "apps/vbt-account/src",
+                "output": "/"
+              }
             ],
             "styles": ["apps/vbt-account/src/styles.scss"],
             "scripts": []
@@ -77,8 +83,10 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:lint",
           "options": {
+            "linter": "eslint",
+            "config": "apps/vbt-account/.eslintrc",
             "tsConfig": [
               "apps/vbt-account/tsconfig.app.json",
               "apps/vbt-account/tsconfig.spec.json"
@@ -116,8 +124,10 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@nrwl/linter:lint",
           "options": {
+            "linter": "eslint",
+            "config": "apps/vbt-account-e2e/.eslintrc",
             "tsConfig": ["apps/vbt-account-e2e/tsconfig.e2e.json"],
             "exclude": ["**/node_modules/**", "!apps/vbt-account-e2e/**/*"]
           }
@@ -192,6 +202,10 @@
     },
     "@nrwl/angular:library": {
       "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss",
+      "prefix": "asd"
     }
   },
   "defaultProject": "vbt-account"

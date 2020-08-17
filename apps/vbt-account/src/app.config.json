@@ -1,0 +1,32 @@
+{
+  "identityHost": "{protocol}//{hostname}{:port}/auth/realms/vbt-identity",
+  "baseUrl": "",
+  "loginRoute": "login",
+  "contextRootApp": "vbt-account",
+  "authType": "Bearer",
+  "locale": "tr",
+  "logLevel": "trace",
+  "notificationDefaultDuration": 2000,
+  "auth": {
+    "withCredentials": false
+  },
+  "application": {
+    "storagePrefix": "ASD",
+    "name": "Vbt Account",
+    "copyright": "© 2020 - 2021 Atlas Soft. All Right Reserved."
+  },
+  "languages": [
+    {
+      "key": "tr",
+      "label": "Turkish"
+    },
+    {
+      "key": "en",
+      "label": "English"
+    }
+  ],
+  "sideNav": {
+    "expandedSidenav": true,
+    "preserveState": true
+  }
+}
