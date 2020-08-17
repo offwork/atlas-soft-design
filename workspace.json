@@ -136,7 +136,7 @@
     }
   },
   "cli": {
-    "defaultCollection": "@nrwl/angular"
+    "defaultCollection": "@ngxs/schematics"
   },
   "schematics": {
     "@nrwl/workspace": {
